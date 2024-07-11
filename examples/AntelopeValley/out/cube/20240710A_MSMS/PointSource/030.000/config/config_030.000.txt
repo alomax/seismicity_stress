@@ -1,0 +1,18 @@
+[io-config]
+exp_name = 030.000
+input_file = /Users/anthony/soft/seismicity_stress/examples/AntelopeValley/out/cube/20240710A_MSMS/PointSource/030.000/config/inputs_030.000.intxt
+output_dir = /Users/anthony/soft/seismicity_stress/examples/AntelopeValley/out/cube/20240710A_MSMS/PointSource
+plot_stress = 1
+plot_grd_disp = 0
+gps_disp_points = 
+aftershocks = 
+strain_file = 
+
+[compute-config]
+strike_num_receivers = 1
+dip_num_receivers = 1
+# mu lambda from MuLambda_ak135-f.xlsx for depth ~3-10 km
+mu = 26.6e9
+lame1 = 34.22e9
+B = 0
+fixed_rake = 

@@ -1,0 +1,26 @@
+# General: poissons_ratio friction_coef lon_min lon_max lon_zero lat_min lat_max lat_zero
+General: 0.250 0.400 -120.488 -118.488 -119.488 37.812 39.212 38.512 
+
+# Receiver_Horizontal_Profile: depth_km strike dip rake centerlon centerlat length_km width_km inc_km
+#
+# 20240710A_MSMS
+# same normal fault slip as mainshock (MS)
+# Nevada Seismological Laboratory https://earthquake.usgs.gov/earthquakes/eventpage/nc73584926/moment-tensor?source=nn&code=nn00811145
+##
+Receiver_Horizontal_Profile: 21.000 356.0 49.0 -102.0 -119.488  38.512 30.0 30.0 0.25
+#
+# 20240710A_MSSS
+# strike-slip fault slip as some aftershocks (SS)
+##Receiver_Horizontal_Profile: 21.000 135.0 89.9 180.0 -119.488  38.512 30.0 30.0 0.25
+# PointSource
+# Source_FM: strike rake dip lon lat depth_km magnitude
+# IMPORTANT! depth best centered between DEPTH_MIN and DEPTH_MAX, Source_FM centered in cube
+#
+# Nevada Seismological Laboratory https://earthquake.usgs.gov/earthquakes/eventpage/nc73584926/moment-tensor?source=nn&code=nn00811145
+# Plane	Strike	Dip	Rake
+# NP1	194°	42°	-76°
+# NP2	356°	49°	-102°
+Source_FM: 356.0 -102.0 49.0 -119.488  38.512  30.0  6.0
+# true centroid of fault in stress cube (not needed when Source_FM centered in cube)
+# FaultSlipObject_Geographic_Center: lon lat depth
+#FaultSlipObject_Geographic_Center: 38.512 -119.488  9.46

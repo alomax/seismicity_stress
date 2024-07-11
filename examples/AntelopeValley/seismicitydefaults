@@ -1,0 +1,143 @@
+
+#seismicity.event.colormap=OTIME
+###seismicity.event.colormap=OTIME;2021,06,08,00,00,00,0,255,91,191;2021,07,08,22,49,47,191,191,32,191;2021,07,08,22,49,47,255,32,32,191;2021,07,15,00,00,00,207,91,207,191;2022,01,01,00,00,00,63,91,255,191;
+#
+#seismicity.event.colormap=DEPTH;-1.0,255,255,255,127;0.0,255,255,0,127;2.5,0,255,0,127;5.0,0,255,255,127;7.5,255,0,255,127;10.0,191,0,0,127;
+###seismicity.event.colormap=DEPTH;-1.0,255,255,255,127;0.0,255,255,0,127;2.5,0,255,0,127;5.0,0,255,255,127;10,255,0,255,127;
+
+seismicity.view.invertcolors=NO
+seismicity.scattersamples.applycolormap=YES
+
+seismicity.event.size = 0.6
+seismicity.event.display.reverse=YES
+
+#seismicity.event.filter.otime=2013,12,13,00,00,00;2016,10,19,23,59,59
+#seismicity.event.filter.ellipsoid.se3=-1;4
+#seismicity.event.filter.rms=-1;0.4
+#seismicity.event.filter.nphs=20;9999
+#seismicity.event.filter.gap=-1;90
+
+seismicity.grid = maps/AntelopeValley_2021.hdr
+seismicity.color.grid=159,159,159
+seismicity.show.grid=NO
+
+# TRANS AZIMUTHAL_EQUIDIST WGS-84 38.5 -119.5 0
+seismicity.show.grid.latlon=YES
+seismicity.grid.latlonstep=0.1
+seismicity.grid.latlon.ticsonly=YES
+seismicity.grid.latlon.depth=0.0,10.0
+seismicity.grid.latlon.clip=NO
+seismicity.grid.latlon.clip.events=NO
+# TRANS AZIMUTHAL_EQUIDIST WGS-84 34.20 -116.44 0
+seismicity.grid.latlontext=38.4,38.6,-119.65,-119.35,0.3,4.0
+seismicity.grid.scale.pos=0.15,0.15,1.0,3.0,90
+
+#seismicity.event.filter.hypo=35.75,-120.62,-999;36.05,-120.30,9999
+
+seismicity.hypoassoc.color.alpha=16
+seismicity.hypoassoc.distminmean.factor=4.0
+
+
+#-shapefiles.<N>=<Shapefile specifications (FFileURL; RGB color (0-255,0-255,0-255) or Color Name; polygon border (NO_BORDER|SOLID_BORDER*; polygon fill (NO_FILL*|SOLID_FILL|TRANSPARENT_FILL|MESH_FILL)); symbol type (CROSS|TETRAHEDRON|INVERTED_TETRAHEDRON|DIAMOND|SPHERE|CUBE|PENTAGON|HEXAGON|OCTAGON|FILLED_SPHERE*); symbol size (10.0*); label)>
+seismicity.shapefiles.0=/Users/anthony/work/qfaults/Qfaults_GIS/SHP/Qfaults_US_Database;170,111,158,255;SOLID_BORDER;NO_FILL;CROSS;4.0;-1.6;qfaults
+seismicity.shapefiles.filter.latlondepth=38.4,-119.65,999#38.6,-119.35,-999
+
+seismicity.grid.zlimits.east = NO
+seismicity.grid.zlimits.south = NO
+seismicity.grid.zlimits.spaced = SW
+
+seismicity.show.axes3d=NO
+seismicity.axes3d.font=2.0,1.0
+#seismicity.axes3d.pos.abs=8.0,-5.0,6.0
+seismicity.axes3d.pos.plot=0.4,-0.4
+
+seismicity.dump.events.csv=NO
+seismicity.dump.samples.latlon=NO
+
+seismicity.snapshot.format=png
+seismicity.snapshot.directory=./snapshots
+#seismicity.snapshot.size=2200,800
+
+seismicity.display.size=0.7,0.95
+seismicity.init.zoom=-2
+seismicity.init.viewpoint=180,0
+seismicity.view.persp=NO
+
+
+seismicity.text = maps/map.text
+seismicity.text.density = 1.5
+seismicity.text.sizefactor=1.4
+
+# -image2D=<2D background image (FileURL; lat, long lower left; lat, long upper right | lat, long upper left; lat, long upper right; lat, long lower right; lat, long lower left; [depth (km)])>
+# https://portal.opentopography.org/rasterOutput?jobId=rt1625932421348
+###seismicity.image2d=maps/AntelopeValley_2021_color_darker.png; 38.4,-119.65;38.6,-119.35; -1.6
+#
+# Wang, K., Dreger, D. S., Burgmann, R., & Taira, T. (2023). Finite‐Source Model of the 8 July 2021 M 6.0 Antelope Valley, California, Earthquake. Seismological Research Letters. https://doi.org/10.1785/0220220262
+seismicity.image2d=maps/Wang_et_2023_joint_inversion.png; 38.40,-119.612;38.616,-119.407; 8.0
+
+# ~/work/NLL_Earthquake/AntelopeValley_2021/HypoDiff/diff_AntelopeValley_2021.sum_ALL.grid0.loc.hyp_AntelopeValley_2021.sum_ALL.grid0.loc.GMT_xyz
+# seismicity.lines.0 = HypoDiff/diff_AntelopeValley_2021.sum_ALL.grid0.loc.hyp_AntelopeValley_2021.sum_ALL.grid0.loc.GMT_xyz;SOLID;127,63,63;1.0;HypoDiff
+#seismicity.lines.0 = maps/ca_hiwys.all.asc.latlon;SOLID;0,63,127;1.0;Highways
+#seismicity.lines.0 = maps/S_Salton_Sea.xy;SOLID;63,63,127;1.0;Coast/Rivers
+
+#
+seismicity.symbols.0 = maps/stations.xyz;INVERTED_TETRAHEDRON;127,127,127;1.0;Stations
+
+# stress
+seismicity.symbols.1 = out/cube/20240710A_MSMS/PointSource/FF_4days/masked_stress_neg.xyz;FILLED_SPHERE_NO_OUTLINE;91,91,255,4;1.0;0.5;point_stress_neg;NO_POLYGON_CLIP
+seismicity.symbols.2 = out/cube/20240710A_MSMS/PointSource/FF_4days/masked_stress_pos.xyz;FILLED_SPHERE_NO_OUTLINE;255,91,91,4;1.0;0.5;point_stress_pos;NO_POLYGON_CLIP
+
+# finite fault
+seismicity.symbols.3 = out/cube/20240710A_MSMS/PointSource/FF_4days/relative_fault_slip_masked_pos_50.xyz;FILLED_SPHERE_NO_OUTLINE;63,255,255,8;1.0;0.5;FF_pos_50_MS;NO_POLYGON_CLIP
+#seismicity.symbols.4 = out/cube/20240710A_MSMS/PointSource/FF_4days/relative_fault_slip_pos.xyz;FILLED_SPHERE_NO_OUTLINE;63,127,127,8;1.0;0.35;FF_coul_pos_MS;NO_POLYGON_CLIP
+
+
+seismicity.polygons.0 = maps/Wang_et_2023_joint_inversion.xyz;SOLID_BORDER;NO_FILL;127,127,127,191;2.0;Wang_et_2023;NO_USE_FOR_PLANE_CLIP;-9.9
+seismicity.polygons.1 = maps/NN_RCMT_Mwr2.sdr;SOLID_BORDER;NO_FILL;112,255,255,191;NN_RCMT_Mwr2
+#seismicity.polygons.2 = maps/NC_CMT_Mw1.sdr;SOLID_BORDER;MESH_FILL;255,112,255,191;NC_CMT_Mw1
+#seismicity.polygons.3 = maps/USGS_CMT_Wphase2.sdr;SOLID_BORDER;MESH_FILL;95,20,20,159;USGS_Wphase1
+
+seismicity.mechanism.horizonlycutoffdip=30
+seismicity.mechanism.size=1.5
+seismicity.stroke.axis=1.20
+seismicity.mechanism.axis.slip.target=135,135
+
+seismicity.read.mechanisms = YES
+seismicity.read.stations = NO 
+seismicity.read.phases = YES
+
+seismicity.show.axis.p = NO
+seismicity.show.axis.t = NO
+seismicity.show.axis.n = NO
+seismicity.show.axis.thrust = NO
+seismicity.show.axis.normal = YES
+seismicity.show.axis.strikeslip = NO
+seismicity.show.probability = NO
+seismicity.show.ellipsoid = NO
+seismicity.show.expectation = NO
+seismicity.show.faultplane = NO
+seismicity.show.firstmotion = NO
+seismicity.show.magnitude = YES
+seismicity.show.maxlikelihood = YES
+seismicity.show.residual.all = NO
+seismicity.show.residual.p = NO
+seismicity.show.residual.s = NO
+seismicity.show.residual.label=YES
+seismicity.show.station = NO
+seismicity.show.stationsymbol = NO
+
+seismicity.color.station.symbol=white
+
+seismicity.residual.size=0.5
+seismicity.stroke.phase.residual.p.up=2
+seismicity.stroke.phase.residual.p.down=2
+seismicity.stroke.phase.residual.s.up=2
+seismicity.stroke.phase.residual.s.down=2
+
+#seismicity.info.limit.residual = 1.0
+#seismicity.info.limit.residual.P = 0.5
+
+seismicity.stroke.phase.residual.p.up=3.0
+seismicity.stroke.phase.residual.p.down=3.0
+seismicity.stroke.phase.residual.s.up=2.0
+seismicity.stroke.phase.residual.s.down=2.0

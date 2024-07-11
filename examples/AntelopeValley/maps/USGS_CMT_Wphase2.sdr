@@ -1,0 +1,7 @@
+> POINTS_OSD_RECT (lat_orig,lon_orig,depth_orig,strike,dsmin,dsmax,dip,ddmin,ddmax)
+ 38.5123 -119.4879 9.4625   347 -10 5   63 -10 0
+
+> https://earthquake.usgs.gov/earthquakes/eventpage/nc73584926/moment-tensor?source=us&code=us_6000etc0_mww> Event: 	2018 11 30  17:29:29.3090   
+
+> Event: 	2021 07 08  22:49:47.5021  38.5123 -119.4879 h=9.4625  M=6.00
+> Source: 	"out/20231223A_coherence/coherence/KS_smooth/AntelopeValley_2021/001_2-10Hz_dmsl4.0_cmd5.0_cdd10.0_cm0.45_abs_nnorm_snr_coh0.5_se10.0/AntelopeValley_2021.sum_ALL.grid0.loc.hyp"

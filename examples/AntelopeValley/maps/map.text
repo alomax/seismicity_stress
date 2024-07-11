@@ -1,0 +1,29 @@
+# theText horizAllign vertAllign LATLON  latRef longRef zRef  xPath yPath zPath  xUp yUp zUp  redCol greenCol blueCol  relSize fontType font
+
+#  events
+#"Mw6.0" 1 1 LATLON   35.81777 -120.36641 -14.0   1.0 -1.0 0.0   0.0 0.0 1.0   191 191 191 1.8   PLAIN  Sans
+
+# polygons
+#"6.4NW" 0 0 LATLON   35.69687 -117.44763 1.5   1.0 -0.25 0.0   0.25 1.0 1.0   0 0 0   1.8   PLAIN  Sans
+
+# Map text
+#"Parkfield" 0 0 LATLON   35.899722 -120.432778  1.5   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   1.5   PLAIN  Sans
+#"GH" 1 1 LATLON   35.82994984592424 -120.34945797425958  1.5   0.6428 -0.766 0.0   0.766 0.6428 0.0   191 191 191   1.5   PLAIN  Sans
+#"MM" 1 1 LATLON   35.956329 -120.498489  1.5   0.6428 -0.766 0.0   0.766 0.6428 0.0   191 191 191   1.5   PLAIN  Sans
+#"SAFZ" 1 1 LATLON   36.06630 -120.62279  1.5   0.6428 -0.766 0.0   0.766 0.6428 0.0   191 191 191   1.8   PLAIN  Sans
+#"SAFZ" 1 1 LATLON   35.82163 -120.35662  1.5   0.6428 -0.766 0.0   0.766 0.6428 0.0   191 191 191   1.8   PLAIN  Sans
+
+# North arrow
+# unrotated
+#\u21bf 1 1 LATLON   36.0030 -120.35433 0.0   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   18.0   BOLD  Sans
+#"N" 1 1 LATLON   36.000 -120.35133 0.0   1.0 0.0 0.0   0.0 1.0 0.0   255 255 255   4.5   BOLD+ITALIC  Sans
+# rotated seismicity.init.viewpoint=230,90
+# JDK8 \u21bf 1 1 LATLON   38.5730 -119.38433 0.0   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   18.0   BOLD  Sans
+# JDK16 
+\u21bf 1 1 LATLON   38.5800 -119.38433 0.0   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   18.0   BOLD  Sans
+"N" 1 1 LATLON   38.56642 -119.37994 0.0   1.0 0.0 0.0   0.0 1.0 0.0   255 255 255   4.5   BOLD+ITALIC  Sans
+
+"ALomax scientific - NonLinLoc+SSST+coherence" 2 0 LATLON   38.40239 -119.35311  -9.9   1.0 0.0 0.0   0.0 1.0 1.0   91 91 127   1.5   PLAIN  Sans
+#
+#"NCEDC - DD" 2 0 LATLON   38.40239 -119.35311  -9.9   1.0 0.0 0.0   0.0 1.0 1.0   91 91 127   1.5   PLAIN  Sans
+

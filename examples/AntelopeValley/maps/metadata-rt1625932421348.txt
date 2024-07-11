@@ -1,0 +1,63 @@
+Dataset Information:
+
+Dataset Name: Shuttle Radar Topography Mission (SRTM GL1) Global 30m Ellipsoidal(SRTM_GL1_Ellip)
+
+Dataset Acknowledgement: 
+Citing LP DAVV and Data Products: https://lpdaac.usgs.gov/about/citing_lp_daac_and_data
+
+  If you wish to cite the SRTM products in a report or publication please use: 
+ Farr, T. G., and M. Kobrick, 2000, Shuttle Radar Topography Mission produces a wealth of data. Eos Trans. AGU, 81:583-583.
+
+  Farr, T. G. et al., 2007, The Shuttle Radar Topography Mission, Rev. Geophys., 45, RG2004, doi:10.1029/2005RG000183. (Also available online at http://www2.jpl.nasa.gov/srtm/SRTM_paper.pdf)
+
+  Kobrick, M., 2006, On the toes of giants--How SRTM was born, Photogramm. Eng. Remote Sens., 72:206-210.
+
+  Rosen, P. A. et al., 2000, Synthetic aperture radar interferometry, Proc. IEEE, 88:333-382.
+
+Data Access Acknowledgement: This material is based on [data, processing] services provided by the OpenTopography Facility with support from the National Science Foundation under NSF Award Numbers 1833703, 1833643, and 1833632.
+
+Dataset Citation: NASA Shuttle Radar Topography Mission (SRTM)(2013). Shuttle Radar Topography Mission (SRTM) Global.  Distributed by OpenTopography.  https://doi.org/10.5069/G9445JDF Accessed: 2021-07-10
+
+Horizontal Coordinates: WGS 1984 [EPSG: 4326]
+Vertical Coordinates: WGS84
+
+Job Description:
+	User:[Guest] alomax@free.fr
+	Job ID: rt1625932421348
+	Title: AntelopeValley_2021
+	Description:
+
+Job Processing Result:
+	Submission Time: 2021-07-10 08:53:41
+	Completion Time: N/A
+	Duration: -1 seconds
+	Status: DemVizService
+
+Data Selection Coordinates: 
+	Xmin: -119.65
+	Xmax: -119.35
+	Ymin: 38.4
+	Ymax: 38.6
+
+Input & Output Options: 
+	Data Type: Global
+	Output Format: IMG
+	Layer Type: 
+
+Visualization:
+	Images & Google Earth KML: Yes
+	Altitude of Light: 45
+	Azimuth of Light: 315
+	Color Option: Yes
+	KMZ Option: No
+
+Canopy Height Model:
+	Enable Canopy Height Model: No
+
+Hydrologic Terrain Analysis (TauDEM) Products:
+	Hydrologically correct DEM with pits filled: No
+	D-Infinity Flow Direction : No
+	D-Infinity Specific Catchment Area: No
+	Topographic Wetness Index: No
+	D8 Flow Direction: No
+	tauDemD8FlowDir: No

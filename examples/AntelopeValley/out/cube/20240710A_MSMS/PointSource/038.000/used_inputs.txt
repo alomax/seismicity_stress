@@ -1,0 +1,8 @@
+# General: poissons_ratio friction_coef lon_min lon_max lon_zero lat_min lat_max lat_zero
+# Source_Patch: strike rake dip length_km width_km lon lat depth_km slip_m
+# Source_FM: strike rake dip lon lat depth_km magnitude
+# Receiver: strike rake dip length_km width_km lon lat depth_km
+
+General: 0.281 0.400 -120.488000 -118.488000 -119.488000 37.812000 39.212000 38.512000 
+Source_FM: 356.000 -102.000 49.000 -119.488000 38.512000 30.000 6.000
+Receiver_Horizontal_Profile: 38.000 356.000 49.000 -102.000 -119.488000 38.512000 30.000000 30.000000 0.250000
