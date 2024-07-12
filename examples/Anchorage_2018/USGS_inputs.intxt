@@ -1,0 +1,18 @@
+# General: poissons_ratio friction_coef lon_min lon_max lon_zero lat_min lat_max lat_zero
+General: 0.250 0.400 -150.4 -149.6 -150.0  61.2 61.6 61.4 
+
+# Source_FM: strike rake dip lon lat depth_km magnitude
+# Receiver: strike rake dip length_km width_km lon lat depth_km
+
+# Receiver_Horizontal_Profile: depth_km strike dip rake centerlon centerlat length_km width_km inc_km
+Receiver_Horizontal_Profile: 45.0  6.0 28.0 -93.0  -150.0 61.4  30.0 30.0 0.25
+#Receiver_Horizontal_Profile: 55.0  6.0 28.0 -93.0  -150.0 61.4  30.0 30.0 0.25
+
+# Source_Patch: strike rake dip length_km width_km lon lat depth_km slip_m
+# https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
+# East dipping
+Source_Patch: 6.0  -93.0 28.0  15.0 5.0 -150.01441 61.33488 46.37  0.5
+# West dipping
+#Source_Patch: 189 -88 62  15.0 5.0 -149.84425 61.46077 44.3  0.5
+
+

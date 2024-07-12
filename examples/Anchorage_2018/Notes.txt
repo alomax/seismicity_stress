@@ -1,0 +1,49 @@
+# out/20231125A_coherence/coherence/scak/Anchorage_2018/001_2-10Hz_dmsl4.0_cmd5.0_cdd10.0_cm0.45_abs_nnorm_snr_coh0.5_se7.0/Anchorage_2018.sum_ALL.grid0.loc.hyp
+
+# Event: 	2018 11 30  17:29:29.3080  61.3308 -149.9320 h=48.7109  M=7.10
+
+conda activate elastic_py2
+
+
+elastic_stresses_driver.py USGS_config.txt ; gv out/USGS/horizontal_profile_stresses.png
+
+
+
+
+# Source_Patch: strike rake dip length_km width_km lon lat depth_km slip_m
+Source_Patch: 6.0  -93.0 28.0  15.0 5.0 -150.01441 61.33488 46.37  0.5
+Source_Patch: 189 -88 62  15.0 5.0 -149.84425 61.46077 44.3  0.5
+
+
+
+# length, width, position from Fig s10f in
+# Liu, C., Lay, T., Xie, Z., & Xiong, X. (2019). Intraslab Deformation in the 30 November 2018 Anchorage, Alaska, MW 7.1 Earthquake. Geophysical Research Letters, 46(5), 2449–2457. https://doi.org/10.1029/2019GL082041
+
+# EastDipping BIG
+# DO NOT USE ANYMORE #python elastic_stresses_alomax/construct_concentrated_source_patches_fault.py --cstype COSINE --lon_btc -150.268 --lat_btc 61.280 --depth_btc 39.56 --length 33.0 --width 33.0 --num_patch_length 11 --sigma_length 10.0 --num_patch_width 11 --sigma_width 10.0 --moment_mag 7.1 --strike 6.0 --rake -93.0 --dip 28.0 --rigidity 72.0e9 --out_file cosine_fault_EastDipping.txt
+
+# EastDipping SMALL
+# DO NOT USE ANYMORE #python elastic_stresses_alomax/construct_concentrated_source_patches_fault.py --cstype COSINE --lon_btc -150.064 --lat_btc 61.337 --depth_btc 44.96 --length 15.0 --width 11.0 --num_patch_length 15 --sigma_length 7.5 --num_patch_width 11 --sigma_width 5.5 --moment_mag 7.1 --strike 6.0 --rake -93.0 --dip 28.0 --rigidity 72.0e9 --out_file out/cube/${RUN_NAME}/cosine_fault_EastDipping.txt
+
+
+
+# DO ALL IN:
+run_elastic_stresses_cube.bash
+
+# plot vertical section
+#python elastic_stresses_alomax/plot_cube_vertical_section.py out/cube/20231213A/EastDipping/config.txt
+python elastic_stresses_alomax/plot_cube_vertical_section.py out/cube/20231213A/PointSource/config.txt
+
+# point source
+# best (west-dipping receivers)
+python elastic_stresses_alomax/inv_aftershocks_stress_ffault.py --config out/cube/20240303A_EastWest/PointSource/config.txt --aftershocks ../NLL_csv_catalogs/20231125A_coherence_Anchorage_2018.1day.csv --max_aftershock_count 1 --diam_mask_stress_center 1.0 --decay_mask_stress_center 10.0  --plot_scale 2.0
+#
+# not good (east-dipping receivers)
+# python elastic_stresses_alomax/inv_aftershocks_stress_ffault.py --config out/cube/20240303A_EastEast/PointSource/config.txt --aftershocks ../NLL_csv_catalogs/20231125A_coherence_Anchorage_2018.1day.csv --max_aftershock_count 1 --diam_mask_stress_center 1.0 --decay_mask_stress_center 10.0  --plot_scale 2.0
+#
+sv -event.filetype CSV_COMPACT NLL_csv_catalogs/20231125A_coherence_Anchorage_2018.1day.csv &
+
+# aftershocks
+python elastic_stresses_alomax/inv_aftershocks_stress_ffault.py --config out/cube/20240101A_East/PointSource/config.txt --aftershocks ../NLL_csv_catalogs/20231125A_coherence_Anchorage_2018.1year.csv --max_aftershock_count 1 --diam_mask_stress_center 0.5 --decay_mask_stress_center 20.0  --plot_scale 2.0
+#
+sv out/20231125A_coherence/coherence/scak/Anchorage_2018/001_2-10Hz_dmsl4.0_cmd5.0_cdd10.0_cm0.45_abs_nnorm_snr_coh0.5_se7.0/Anchorage_2018.sum_ALL.grid0.loc.hyp -event.filter.otime 2018,11,30,17,29,00#2019,12,01 &
