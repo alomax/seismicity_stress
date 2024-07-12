@@ -5,8 +5,10 @@ conda activate elastic_py
 export SEIS_STRESS_PYPATH=../../bin
 
 # set out path
-rm out
+mv out out_ORIG
 ln -s <my_out_path> out
+# or
+mkdir out
 
 # construct point-source deltaCFS cube as stack of elastic_stresses_py Receiver_Horizontal_Profile's
 run_elastic_stresses_cube.bash

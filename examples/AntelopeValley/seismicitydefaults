@@ -89,7 +89,7 @@ seismicity.symbols.2 = out/cube/20240710A_MSMS/PointSource/FF_4days/masked_stres
 
 # finite fault
 seismicity.symbols.3 = out/cube/20240710A_MSMS/PointSource/FF_4days/relative_fault_slip_masked_pos_50.xyz;FILLED_SPHERE_NO_OUTLINE;63,255,255,8;1.0;0.5;FF_pos_50_MS;NO_POLYGON_CLIP
-#seismicity.symbols.4 = out/cube/20240710A_MSMS/PointSource/FF_4days/relative_fault_slip_pos.xyz;FILLED_SPHERE_NO_OUTLINE;63,127,127,8;1.0;0.35;FF_coul_pos_MS;NO_POLYGON_CLIP
+##seismicity.symbols.4 = out/cube/20240710A_MSMS/PointSource/FF_4days/relative_fault_slip_pos.xyz;FILLED_SPHERE_NO_OUTLINE;63,127,127,8;1.0;0.35;FF_coul_pos_MS;NO_POLYGON_CLIP
 
 
 seismicity.polygons.0 = maps/Wang_et_2023_joint_inversion.xyz;SOLID_BORDER;NO_FILL;127,127,127,191;2.0;Wang_et_2023;NO_USE_FOR_PLANE_CLIP;-9.9
