@@ -1,0 +1,9 @@
+> POINTS_OSD_RECT (lat_orig,lon_orig,depth_orig,strike,dsmin,dsmax,dip,ddmin,ddmax)
+ 61.3308 -149.9320 48.7109   189 -21 0   62 -8 3
+ 
+
+> https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
+> Event: 	2018 11 30  17:29:29.3090   61.3301 -149.9320  h  48.2422  M  7.10  RMS   0.1109  Nphs    87  Gap  25  Dist   11.2620  errH    1.14  errZ    1.37  id quakeml:earthquake.alaska.edu/event/018fcnsk91
+
+> Event: 	2018 11 30  17:29:29.3080  61.3308 -149.9320 h=48.7109  M=7.10
+> Source: 	"out/20231125A_coherence/coherence/scak/Anchorage_2018/001_2-10Hz_dmsl4.0_cmd5.0_cdd10.0_cm0.45_abs_nnorm_snr_coh0.5_se7.0/005257/Anchorage_2018.20181130.172936.grid0"

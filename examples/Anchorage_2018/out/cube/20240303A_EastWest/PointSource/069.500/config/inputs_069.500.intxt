@@ -1,0 +1,24 @@
+# General: poissons_ratio friction_coef lon_min lon_max lon_zero lat_min lat_max lat_zero
+General: 0.250 0.400 -150.4 -149.6 -150.0  61.2 61.6 61.4 
+
+# Receiver_Horizontal_Profile: depth_km strike dip rake centerlon centerlat length_km width_km inc_km
+#
+# EastEast
+# same fault slip as mainshock **East dipping**
+##Receiver_Horizontal_Profile: 69.500  6.0 28.0 -93.0  -149.954 61.424  25.0 25.0 0.5
+#
+# EastWest
+# same fault slip as mainshock **West dipping**
+Receiver_Horizontal_Profile: 69.500  189.0 62.0 -88.0  -149.954 61.424  25.0 25.0 0.5
+# PointSource
+# Source_FM: strike rake dip lon lat depth_km magnitude
+# IMPORTANT! depth best centered between DEPTH_MIN and DEPTH_MAX, Source_FM centered in cube
+#
+# same fault slip as mainshock **East dipping**
+Source_FM: 6.0 -93.0 28.0  -149.954 61.424  47.5  7.1  # https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
+#
+# same fault slip as mainshock **West dipping** (FOR A PIONT SOURCE NECESSARILY GIVES IDENTICAL RESULTS TO ABOVE)
+##Source_FM: 189.0 -88.0 62.0  -149.954 61.424  47.5  7.1  # https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
+# true centroid of fault in stress cube (not needed when Source_FM centered in cube)
+# FaultSlipObject_Geographic_Center: lon lat depth
+FaultSlipObject_Geographic_Center: -149.954 61.424  47.5

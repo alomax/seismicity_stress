@@ -1,0 +1,18 @@
+[io-config]
+exp_name = 051.500
+input_file = /Users/anthony/soft/seismicity_stress/examples/Anchorage_2018/out/cube/20240303A_EastWest/PointSource/051.500/config/inputs_051.500.intxt
+output_dir = /Users/anthony/soft/seismicity_stress/examples/Anchorage_2018/out/cube/20240303A_EastWest/PointSource
+plot_stress = 1
+plot_grd_disp = 0
+gps_disp_points = 
+aftershocks = 
+strain_file = 
+
+[compute-config]
+strike_num_receivers = 1
+dip_num_receivers = 1
+# mu lambda from MuLambda_ak135-f.xlsx for depth ~45 km
+mu = 72e9
+lame1 = 87e9
+B = 0
+fixed_rake = 

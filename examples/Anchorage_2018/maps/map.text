@@ -1,0 +1,41 @@
+# theText horizAllign vertAllign LATLON  latRef longRef zRef  xPath yPath zPath  xUp yUp zUp  redCol greenCol blueCol  relSize fontType font
+
+#  events
+#"Mw6.0" 1 1 LATLON   35.81777 -120.36641 -14.0   1.0 -1.0 0.0   0.0 0.0 1.0   63 63 63 1.8   PLAIN  Sans
+
+# polygons
+#"6.4NW" 0 0 LATLON   35.69687 -117.44763 1.5   1.0 -0.25 0.0   0.25 1.0 1.0   0 0 0   1.8   PLAIN  Sans
+
+# Map text
+#"Rio Dell" 1 1 LATLON   40.499167 -124.106389  0.49   1.0 0.0 0.0   0.0 1.0 0.0   63 63 63   1.4   BOLD  Sans
+#" NP.1584B" 1 2 LATLON   40.498570	-124.292320	0.72   1.0 0.0 0.0   0.0 1.0 0.0   63 63 63   1.4   BOLD  Sans
+#"Cape Mendocino" 2 1 LATLON   40.438305232765295 -124.4213756838366 0.0   1.0 0.0 0.0   0.0 1.0 0.0   63 63 63   1.3   BOLD+ITALIC  Sans
+#"P a c i f i c" 				1 1 LATLON   40.18 -124.55  0.0   1.0 0.0 0.0   0.0 1.0 0.0   63 63 63   2.0   ITALIC  Sans
+#"P l a t e" 					1 1 LATLON   40.14 -124.48  0.0   1.0 0.0 0.0   0.0 1.0 0.0   63 63 63   2.0   ITALIC  Sans
+#"N o r t h  A m e r i c a n" 	1 1 LATLON   40.33 -124.01  0.0   1.0 0.0 0.0   0.0 1.0 0.0   63 63 63   2.0   ITALIC  Sans
+#"P l a te" 						1 1 LATLON   40.29 -124.01  0.0   1.0 0.0 0.0   0.0 1.0 0.0   63 63 63   2.0   ITALIC  Sans
+
+##".   <-- You Are Here" 0 1 LATLON   61.216667 -149.893611	0.0   1.0 1.4 1.4   -1.4 1.0 1.0   255 255 255   1.8   BOLD  Sans
+".  Anchorage" 0 1 LATLON   61.216667 -149.893611	0.0   1.0 0.5 0.5   -0.5 1.0 1.0   191 191 191   1.4   BOLD  Sans
+
+# North arrow
+#\u21bf 1 1 LATLON   40.13442 -124.88739 0.0   1.0 0.0 0.0   0.0 1.0 0.0   178 178 178   18.0   BOLD  Sans
+#dark mode#"N" 1 1 LATLON   40.67315 -124.76833 0.0   1.0 0.0 0.0   0.0 1.0 0.0   255 255 255   4.5   BOLD+ITALIC  Sans
+#"N" 1 1 LATLON   40.09255 -124.87327 0.0   1.0 0.0 0.0   0.0 1.0 0.0   91 91 91   4.5   BOLD+ITALIC  Sans
+
+# Haeussler_2008_plate_motion_geometry.odg  108deg CCW from E
+\u27f5 1 1 LATLON   61.22765 -149.32729 0.0   0.309 -0.951 0.0   0.951 0.309 0.0   127 127 127   12.0   PLAIN  Sans
+"Pacific - North America convergence"  1 1 LATLON   61.22765 -149.32729 0.0   0.309 -0.951 0.0   0.951 0.309 0.0   127 127 127   1.4   PLAIN  Sans
+# Slab2
+"Slab2 40km depth"  1 1 LATLON   61.94624 -149.88285 0.0   2.5 1.0 0.0   -1.0 2.5 0.0   127 127 127   1.4   PLAIN  Sans
+
+"W" 0 0 LATLON   61.5 -151.0  3.0   1.0 0.0 0.0   0.0 0.0 1.0   127 127 127   3.0   PLAIN  Sans
+"E" 2 0 LATLON   61.5 -149.0  3.0   1.0 0.0 0.0   0.0 0.0 1.0   127 127 127   3.0   PLAIN  Sans
+"N" 2 0 LATLON   62.0 -150.0  3.0   0.0 1.0 0.0   0.0 0.0 1.0   127 127 127   3.0   PLAIN  Sans
+"S" 0 0 LATLON   60.9 -150.0  3.0   0.0 1.0 0.0   0.0 0.0 1.0   127 127 127   3.0   PLAIN  Sans
+
+##"USGS-NCSN catalog" 2 0 LATLON   40.02 -124.25  -39.0   1.0 0.0 0.0   0.0 1.0 1.0   91 91 127   2.0   PLAIN  Sans
+##"NCSS-DD" 2 0 LATLON   40.02 -124.25  -39.0   1.0 0.0 0.0   0.0 1.0 1.0   91 91 127   2.0   PLAIN  Sans
+##"ALomax scientific - NonLinLoc" 2 0 LATLON   40.02 -124.25  -39.0   1.0 0.0 0.0   0.0 1.0 1.0   91 91 127   2.0   PLAIN  Sans
+##"ALomax scientific - NonLinLoc+SSST" 2 0 LATLON   40.02 -124.25  -39.0   1.0 0.0 0.0   0.0 1.0 1.0   91 91 127   2.0   PLAIN  Sans
+##"ALomax scientific - NonLinLoc+SSST+coherence" 2 0 LATLON   40.02 -124.25  -39.0   1.0 0.0 0.0   0.0 1.0 1.0   91 91 127   2.0   PLAIN  Sans

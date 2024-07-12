@@ -1,0 +1,11 @@
+# Source_FM: strike rake dip lon lat depth_km magnitude
+# IMPORTANT! depth best centered between DEPTH_MIN and DEPTH_MAX, Source_FM centered in cube
+#
+# same fault slip as mainshock **East dipping**
+Source_FM: 6.0 -93.0 28.0  -149.954 61.424  47.5  7.1  # https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
+#
+# same fault slip as mainshock **West dipping** (FOR A PIONT SOURCE NECESSARILY GIVES IDENTICAL RESULTS TO ABOVE)
+##Source_FM: 189.0 -88.0 62.0  -149.954 61.424  47.5  7.1  # https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
+# true centroid of fault in stress cube (not needed when Source_FM centered in cube)
+# FaultSlipObject_Geographic_Center: lon lat depth
+FaultSlipObject_Geographic_Center: -149.954 61.424  47.5

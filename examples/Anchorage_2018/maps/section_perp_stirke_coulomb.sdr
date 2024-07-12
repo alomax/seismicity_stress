@@ -1,0 +1,3 @@
+> POINTS_OSD_RECT (lat_orig,lon_orig,depth_orig,strike,dsmin,dsmax,dip,ddmin,ddmax)
+ 61.37630 -149.91260 50.0   96 -70 70   90 -50 50
+ 

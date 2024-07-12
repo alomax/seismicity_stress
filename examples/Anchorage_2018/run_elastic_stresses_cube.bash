@@ -1,32 +1,22 @@
-# 20231204 - Anthony Lomax, ALomax Scientific
+# 20240712 - Anthony Lomax, ALomax Scientific
+
+# BASH script to construct a 3D point-source deltaCFS cube using tools from https://github.com/kmaterna/elastic_stresses_py
 
 
-#RUN_NAME=20240303A_EastEast
 RUN_NAME=20240303A_EastWest
-#RUN_NAME=20240101A_EastClust
+#RUN_NAME=20240303A_EastEast
 
 PROJECT=Anchorage_2018
 
+# path to output
+OUTPATH=out/cube/${RUN_NAME}
 # MUST BE ABSOLUTE PATH!
-OUTPATH=/Users/anthony/work/NLL_Earthquake/Anchorage_2018/Elastic-stresses/out/cube/${RUN_NAME}
-
+OUTPATH="$(pwd)/${OUTPATH}"
 mkdir -p ${OUTPATH}
 
-if [ YES == NO ]; then
 
-	# EastDipping FULL SIZE
-	SOURCE_PATCH=EastDipping
-	FAULT_PATCHES_FILE=${OUTPATH}/cosine_fault_EastDipping.txt
-	python elastic_stresses_alomax/construct_concentrated_source_patches_fault.py --cstype COSINE --lon_btc -150.064 --lat_btc 61.337 --depth_btc 44.96 --length 21.0 --width 11.0 --num_patch_length 21 --sigma_length 10.5 --num_patch_width 11 --sigma_width 5.5 --moment_mag 7.1 --strike 6.0 --rake -93.0 --dip 28.0 --rigidity 72.0e9 --out_file ${FAULT_PATCHES_FILE}
-
-elif [ YES == NO ]; then 
-
-	# EastDipping CENT_PATCH_ONLY
-	SOURCE_PATCH=EastDipping
-	FAULT_PATCHES_FILE=${OUTPATH}/cent_patch_fault_EastDipping.txt
-	python elastic_stresses_alomax/construct_concentrated_source_patches_fault.py --cstype CENT_PATCH_ONLY --lon_btc -150.064 --lat_btc 61.337 --depth_btc 44.96 --length 21.0 --width 11.0 --num_patch_length 21 --sigma_length 10.5 --num_patch_width 11 --sigma_width 5.5 --moment_mag 7.1 --strike 6.0 --rake -93.0 --dip 28.0 --rigidity 72.0e9 --out_file ${FAULT_PATCHES_FILE}
-
-elif [ YES == YES ]; then 
+# select point-source specification
+if [ YES == YES ]; then 
 
 	SOURCE_PATCH=PointSource
 	# PointSource
@@ -38,8 +28,10 @@ elif [ YES == YES ]; then
 	cat > ${FAULT_PATCHES_FILE}  << END
 # Source_FM: strike rake dip lon lat depth_km magnitude
 # IMPORTANT! depth best centered between DEPTH_MIN and DEPTH_MAX, Source_FM centered in cube
+#
 # same fault slip as mainshock **East dipping**
 Source_FM: 6.0 -93.0 28.0  -149.954 61.424  47.5  7.1  # https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
+#
 # same fault slip as mainshock **West dipping** (FOR A PIONT SOURCE NECESSARILY GIVES IDENTICAL RESULTS TO ABOVE)
 ##Source_FM: 189.0 -88.0 62.0  -149.954 61.424  47.5  7.1  # https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
 END
@@ -51,23 +43,20 @@ END
 
 fi
 
+
 OUTPUT_DIR=${OUTPATH}/${SOURCE_PATCH}
 mkdir -p ${OUTPUT_DIR}
 # save this file
 cp -p $0 ${OUTPUT_DIR}
 
 
+
+# construct point-source deltaCFS cube as stack of elastic_stresses_py Receiver_Horizontal_Profile's
+
 # depth in meter units
-##declare -i DEPTH_STEP=250	# 0.25 km
 declare -i DEPTH_STEP=500	# 0.5 km
 declare -i DEPTH_MIN=25000	# 35 km
 declare -i DEPTH_MAX=70000	# 60 km
-#declare -i DEPTH_MAX=35000	# 60 km		# DEBUG!
-
-# DEBUG
-#declare -i DEPTH_STEP=10000	# 10 km
-#declare -i DEPTH_MIN=45000	# 45 km
-#declare -i DEPTH_MAX=55000	# 55 km
 
 declare -i DEPTH=DEPTH_MIN
 declare -i INDEX=0
@@ -103,30 +92,27 @@ strain_file =
 [compute-config]
 strike_num_receivers = 1
 dip_num_receivers = 1
-# mu lambda from MuLambda_ak135-f.ods for depth ~3-10 km
-#mu = 34e9
-#lame1 = 87e9
-# mu lambda from MuLambda_ak135-f.ods for depth ~45 km
+# mu lambda from MuLambda_ak135-f.xlsx for depth ~45 km
 mu = 72e9
 lame1 = 87e9
 B = 0
-fixed_rake = -93.0
+fixed_rake = 
 END
 
+# select receiver specification
 	cat << END > ${INPUT_FILE}
 # General: poissons_ratio friction_coef lon_min lon_max lon_zero lat_min lat_max lat_zero
 General: 0.250 0.400 -150.4 -149.6 -150.0  61.2 61.6 61.4 
 
 # Receiver_Horizontal_Profile: depth_km strike dip rake centerlon centerlat length_km width_km inc_km
+#
+# EastEast
 # same fault slip as mainshock **East dipping**
 ##Receiver_Horizontal_Profile: ${DEPTH_USE}  6.0 28.0 -93.0  -149.954 61.424  25.0 25.0 0.5
+#
+# EastWest
 # same fault slip as mainshock **West dipping**
 Receiver_Horizontal_Profile: ${DEPTH_USE}  189.0 62.0 -88.0  -149.954 61.424  25.0 25.0 0.5
-# fault slip pure normal aligned with western two a/s clusters
-##Receiver_Horizontal_Profile: ${DEPTH_USE}  216 80.0 -90.0  -149.954 61.424  25.0 25.0 0.5
-
-# Source_Patch: strike rake dip length_km width_km lon lat depth_km slip_m
-# https://earthquake.usgs.gov/earthquakes/eventpage/ak018fcnsk91/moment-tensor
 END
 
 	cat << END >> ${INPUT_FILE}
@@ -134,8 +120,8 @@ END
 END
 	cat < ${FAULT_PATCHES_FILE} >>  ${INPUT_FILE}
 	
-	#elastic_stresses_driver.py ${CONFIG_FILE}		# run sequentially
-	nice elastic_stresses_driver.py ${CONFIG_FILE} &		# run in parallel
+	#elastic_stresses_driver ${CONFIG_FILE}		# run sequentially
+	nice elastic_stresses_driver ${CONFIG_FILE} &		# run in parallel
 	PIDS[${INDEX}]=$!
 	INDEX=INDEX+1
 
