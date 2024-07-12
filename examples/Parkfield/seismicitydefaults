@@ -1,0 +1,169 @@
+
+
+##seismicity.event.colormap=OTIME;2004,01,01,00,00,00,191,191,32,159;2004,01,01,00,00,00,191,191,32,159;2004,09,28,17,15,20,0,255,91,159;2004,09,28,17,15,20,255,32,159,191;2006,01,01,00,00,00,63,127,255,191;2006,01,01,00,00,00,63,127,255,159;
+
+# colormap_otime_mainshock.ods
+#seismicity.event.colormap=OTIME#1984,01,01,00,00,00,42,167,255,159#1990,05,11,00,00,00,72,234,255,159#1996,09,18,00,00,00,140,255,201,159#2003,01,27,00,00,00,215,255,128,159#2004,09,28,17,15,20,215,255,128,159#2004,09,28,17,15,20,255,64,64,191#2005,09,28,17,15,20,255,64,64,191#2005,09,28,17,15,20,215,255,128,159#2009,06,06,00,00,00,255,222,69,159#2015,10,15,00,00,00,255,178,81,159#2022,02,22,00,00,00,255,165,126,159#
+
+# colormap_otime_mainshock.ods
+#seismicity.event.colormap=OTIME#1984,01,01,00,00,00,191,161,127,159#1984,01,01,00,00,00,191,161,127,159#2004,09,28,17,15,20,255,255,64,191#2004,09,28,17,15,20,255,255,64,191#2004,09,28,17,15,20,255,255,64,191#2004,09,28,17,15,20,255,32,32,191#2005,03,30,17,15,20,255,32,32,191#2005,03,30,17,15,20,199,88,144,159#2022,01,01,00,00,00 ,114,114,204,159#
+# reversed
+#seismicity.event.colormap=OTIME#1984,01,01,00,00,00,114,114,204,159#1984,01,01,00,00,00,114,114,204,159#2004,09,28,17,15,20,199,88,144,191#2004,09,28,17,15,20,199,88,144,191#2004,09,28,17,15,20,199,88,144,191#2004,09,28,17,15,20,255,32,32,191#2005,03,30,17,15,20,255,32,32,191#2005,03,30,17,15,20,255,255,64,159#2022,01,01,00,00,00 ,191,161,127,159#
+
+# Notes_colormap.bash
+# all aftershocks in yellow
+##
+seismicity.event.colormap=OTIME;1984,01,01,00,00,00,25,101,176,191;2004,09,28,17,15,20,51,187,238,223;2004,09,28,17,15,20,247,203,69,223;2022,02,22,23,59,59,247,203,69,223;2022,02,22,23,59,59,247,203,69,223;2022,02,22,23,59,59,247,203,69,223;
+
+
+##seismicity.event.colormap=OTIME
+#seismicity.event.colormap=DEPTH
+
+seismicity.view.invertcolors=NO
+seismicity.scattersamples.applycolormap=YES
+
+seismicity.event.size = 0.7
+
+#seismicity.event.filter.otime=2013,12,13,00,00,00;2016,10,19,23,59,59
+#seismicity.event.filter.ellipsoid.se3=-1;4
+#seismicity.event.filter.rms=-1;0.4
+#seismicity.event.filter.nphs=20;9999
+#seismicity.event.filter.gap=-1;90
+
+seismicity.grid = maps/Parkfield_2022.hdr
+seismicity.color.grid=159,159,159
+seismicity.show.grid=YES
+
+# TRANS AZIMUTHAL_EQUIDIST WGS-84 35.96 -120.5047 49.2
+seismicity.show.grid.latlon=YES
+seismicity.grid.latlonstep=0.1
+seismicity.grid.latlon.ticsonly=YES
+seismicity.grid.latlon.depth=0.0,20.0
+seismicity.grid.latlon.clip=NO
+seismicity.grid.latlon.clip.events=NO
+#Seismica#seismicity.grid.latlontext=35.6,36.2,-120.8,-120.1,0.3,4.0
+seismicity.grid.latlontext=35.617,36.164,-120.740,-120.165,0.3,4.0
+seismicity.grid.scale.pos=0.7,0.05,1.0,4.0,90
+
+# -grid.azscale.pos=<Azimuth oriented 
+ specifications (x pos relative to grid width (0.9*), y pos relative to grid height (0.05*), z pos relative to grid depth (0.05*), relative font size (1.0*), relative font density (3.0*) , azimuth E of N (90.0*) >
+seismicity.grid.azscale.pos=1.25,0.75,0.97,1.5,3.0,0
+
+#seismicity.event.filter.hypo=36.7,-122.5,-5.0#37.5,-121.5,30.0
+
+#-shapefiles.<N>=<Shapefile specifications (FFileURL; RGB color (0-255,0-255,0-255) or Color Name; polygon border (NO_BORDER|SOLID_BORDER*; polygon fill (NO_FILL*|SOLID_FILL|TRANSPARENT_FILL|MESH_FILL)); symbol type (CROSS|TETRAHEDRON|INVERTED_TETRAHEDRON|DIAMOND|SPHERE|CUBE|PENTAGON|HEXAGON|OCTAGON|FILLED_SPHERE*); symbol size or line width (1.0*); force depth (km) | X ; label)>
+#20230320#seismicity.shapefiles.0=/Users/anthony/work/qfaults/Qfaults_GIS/SHP/Qfaults_US_Database;91,159,91,159;SOLID_BORDER;NO_FILL;CROSS;2.0;0.0;qfaults;
+##seismicity.shapefiles.0=/Users/anthony/work/qfaults/Qfaults_GIS/SHP/Qfaults_US_Database;170,111,158,255;SOLID_BORDER;NO_FILL;CROSS;2.0;-0.5;qfaults;
+#seismicity.shapefiles.filter.latlondepth=36.7,-122.5,999#37.5,-121.5,-999
+
+seismicity.grid.zlimits.east = NO
+seismicity.grid.zlimits.south = NO
+#seismicity.grid.zlimits.spaced = NW
+seismicity.grid.zlimits.spaced = SW
+
+seismicity.show.axes3d=NO
+
+seismicity.dump.events.csv=NO
+seismicity.dump.samples.latlon=NO
+
+seismicity.snapshot.format=png
+seismicity.snapshot.directory=./snapshots
+#seismicity.snapshot.size=2200,800
+
+#seismicity.display.size=1.0,0.5
+seismicity.init.zoom=0
+seismicity.init.viewpoint=229,90
+seismicity.view.persp=NO
+
+seismicity.hypoassoc.distminmean.factor=3.0
+seismicity.hypoassoc.color.alpha=8
+
+###
+seismicity.text = maps/map.text
+seismicity.text.density = 3.0
+seismicity.text.sizefactor=1.0
+
+# -image2D=<2D background image (FileURL; lat, long upper left; lat, long upper right; lat, long lower right; lat, long lower left; [depth (km)])>
+# https://portal.opentopography.org/rasterOutput?jobId=rt1649927476371
+###seismicity.image2d=maps/Parkfield_2022_OpenTopographyOrg_gray_darker.png; 35.1,-121.4; 36.7,-119.5; 0.0
+
+#
+# https://portal.opentopography.org/raster?opentopoID=OTSRTM.082016.4326.1
+#    output as GeoTiff
+# convert to GMT grd
+# gdal_translate -of GMT /Users/anthony/work/NLL_Earthquake/LomaPrieta_1989/maps/LomaPrieta_1989_OpenTopographyOrg.tif /Users/anthony/work/NLL_Earthquake/LomaPrieta_1989/maps/LomaPrieta_1989_OpenTopographyOrg.grd
+# get contours 37.04  LongOrig -121.88
+#    grdcontour LomaPrieta_1989_OpenTopographyOrg.grd -JE-121.88/37.04/9.9 -m -C250 -DLomaPrieta_1989_OpenTopographyOrg.xyz > temp.ps
+#    to get coast (if 0 level not present in above):
+#       grdcontour LomaPrieta_1989_OpenTopographyOrg.grd -Je-121.88/37.04/2/0.1 -m -C1, -DLomaPrieta_1989_OpenTopographyOrg_1.xyz > temp.ps
+#       Ctrl-C to interrupt, edit to leave 1m contour to LomaPrieta_1989_OpenTopographyOrg_1.xyz
+#    add > GMT_LONLATELEV_M as first line of each .xyz file
+seismicity.lines.0 = maps/Lomax_Prieta_coast.xy;SOLID;191,191,191;0.5;Coast
+#seismicity.lines.1 = maps/LomaPrieta_1989_OpenTopographyOrg_250_.xyz;SOLID;127,127,127;0.1;Topo
+##seismicity.lines.3 = maps/LomaPrieta_1989_withoutLaPalma.xy;SOLID;159,159,159;1.0;Coast2
+#seismicity.lines.4 = maps/ca_hiwys.all.asc.latlon;SOLID;63,63,63;1.0;Highways
+
+#
+###seismicity.symbols.0 = maps/stations.xyz;INVERTED_TETRAHEDRON;127,127,127;1.5;Stations
+###seismicity.symbols.1 = maps/stations_coherence.xyz;INVERTED_TETRAHEDRON;127,127,127;1.5;Sta_coh
+
+
+# stress
+seismicity.symbols.0 = out/cube/20240212A/PointSource/FF_4hours/masked_stress_neg.xyz;FILLED_SPHERE_NO_OUTLINE;91,91,255,8;1.0;0.5;stress_neg
+seismicity.symbols.1 = out/cube/20240212A/PointSource/FF_4hours/masked_stress_pos.xyz;FILLED_SPHERE_NO_OUTLINE;255,91,91,8;1.0;0.5;stress_pos
+
+# finite fault
+seismicity.symbols.2 = out/cube/20240212A/PointSource/FF_4hours/relative_fault_slip_masked_pos.xyz;FILLED_SPHERE_NO_OUTLINE;63,127,127,8;1.0;0.5;FF_coul_pos;XXPOLYGON_CLIP
+seismicity.symbols.3 = out/cube/20240212A/PointSource/FF_4hours/relative_fault_slip_masked_pos_50.xyz;FILLED_SPHERE_NO_OUTLINE;63,255,255,16;1.0;1.0;FF_coul_pos_50;XXPOLYGON_CLIP
+
+# other Finte Fault
+#seismicity.symbols.4 = maps/s2004PARKFI01DREG.xyz;FILLED_SPHERE_NO_OUTLINE;127,127,127,127;1.0;Dreger2005;XXPOLYGON_CLIP
+
+# synthetic fault slip on rectangular fault patches
+# FiniteFault_synthetic_18x5.sdr
+##seismicity.polygons.0 = maps/FiniteFault_PatchSynth.sdr;SOLID_BORDER;NO_FILL;255,255,255,255;2.0;PatchSynth
+
+seismicity.mechanism.horizonlycutoffdip=30
+seismicity.mechanism.misift.max=0.25
+seismicity.mechanism.nobs.min=40
+
+seismicity.read.mechanisms = YES
+seismicity.read.stations = NO 
+seismicity.read.phases = YES
+
+seismicity.show.axis.p = NO
+seismicity.show.axis.t = NO
+seismicity.show.axis.n = NO
+seismicity.show.axis.thrust = NO
+seismicity.show.axis.normal = YES
+seismicity.show.axis.strikeslip = NO
+seismicity.show.probability = NO
+seismicity.show.ellipsoid = NO
+seismicity.show.expectation = NO
+seismicity.show.faultplane = NO
+seismicity.show.firstmotion = NO
+seismicity.show.magnitude = YES
+seismicity.show.maxlikelihood = YES
+seismicity.show.residual.all = NO
+seismicity.show.residual.p = NO
+seismicity.show.residual.s = NO
+seismicity.show.residual.label=YES
+seismicity.show.station = NO
+seismicity.show.stationsymbol = NO
+
+seismicity.color.station.symbol=white
+
+seismicity.residual.size=0.5
+seismicity.stroke.phase.residual.p.up=2
+seismicity.stroke.phase.residual.p.down=2
+seismicity.stroke.phase.residual.s.up=2
+seismicity.stroke.phase.residual.s.down=2
+
+#seismicity.info.limit.residual = 1.0
+#seismicity.info.limit.residual.P = 0.5
+
+seismicity.stroke.phase.residual.p.up=3.0
+seismicity.stroke.phase.residual.p.down=3.0
+seismicity.stroke.phase.residual.s.up=2.0
+seismicity.stroke.phase.residual.s.down=2.0
+

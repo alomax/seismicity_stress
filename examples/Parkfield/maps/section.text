@@ -1,0 +1,9 @@
+#IF Animation#"San  Andreas  Fault" 1 0 LATLON   35.78291 -120.26426  0.5   1.0 0.0 0.0   0.0 1.0 1.0   255 255 255   1.5   PLAIN  Sans
+#IF Conver Image#
+"San  Andreas  Fault" 0 0 LATLON   35.78586 -120.26722  0.2   1.0 0.3 0.0   0.0 1.0 1.0   255 255 255   1.75   PLAIN  Sans
+#IF w/ title or Animation#
+##"NLL-SSST-Coherence" 2 1 LATLON   35.93832 -120.48450  5.0   0.0 1.0 0.0   0.0 0.0 1.0   255 255 255   2.5   PLAIN  Sans
+"S50W" 1 0 LATLON   35.79704 -120.58018  0.4   0.0 1.0 0.0   0.0 0.0 1.0   191 191 191   1.5   PLAIN  Sans
+"N50E" 1 0 LATLON   35.98249 -120.30840  0.4   0.0 1.0 0.0   0.0 0.0 1.0   191 191 191   1.5   PLAIN  Sans
+"Parkfield" 0 0 LATLON   35.899722 -120.432778  1.5   0.0 1.0 1.0   0.0 -1.0 1.0   255 255 255   1.5   ITALIC  Sans
+\u2591 1 1 LATLON   35.899722 -120.432778  0.466   1.0 1.0 0.0   -1.0 1.0 0.0   191 191 191   1.5   ITALIC  Sans

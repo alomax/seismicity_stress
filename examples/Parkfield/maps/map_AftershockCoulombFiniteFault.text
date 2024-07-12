@@ -1,0 +1,23 @@
+# theText horizAllign vertAllign LATLON  latRef longRef zRef  xPath yPath zPath  xUp yUp zUp  redCol greenCol blueCol  relSize fontType font
+
+#  events
+#"Mw6.0" 1 1 LATLON   35.81777 -120.36641 -14.0   1.0 -1.0 0.0   0.0 0.0 1.0   16 16 16 1.8   PLAIN  Sans
+
+# Map text
+"Pkd" 1 1 LATLON   35.899722 -120.432778  1.0   1.0 0.0 0.0   0.0 1.0 1.0   16 16 16   1.5   PLAIN  Sans
+"GH" 1 1 LATLON   35.82994984592424 -120.34945797425958  1.0   1.0 0.0 0.0   0.0 1.0 1.0   16 16 16   1.5   PLAIN  Sans
+"MM" 1 1 LATLON   35.96157 -120.48721  1.0   1.0 0.0 0.0   0.0 1.0 1.0   16 16 16   1.5   PLAIN  Sans
+#"SAFZ" 1 1 LATLON   36.04054 -120.61888  1.0   1.0 0.0 0.0   0.0 1.0 1.0   16 16 16   1.8   PLAIN  Sans
+#"SAFZ" 1 1 LATLON   35.72672 -120.27406  1.0   1.0 0.0 0.0   0.0 1.0 1.0   16 16 16   1.8   PLAIN  Sans
+#"SWFZ" 1 1 LATLON   35.87568 -120.45018  1.0   1.0 0.0 0.0   0.0 1.0 1.0   16 16 16   1.8   PLAIN  Sans
+# 35.955 -120.4983: McEvilly, T. V., Bakun, W. H., & Casaday, K. B. (1967). The Parkfield, California, earthquakes of 1966. Bulletin of the Seismological Society of America, 57(6), 1221–1244. https://doi.org/10.1785/BSSA0570061221
+"66" 1 1 LATLON   35.955 -120.4983 0.0   1.0 0.0 0.0   0.0 1.0 1.0   16 16 16   1.8   PLAIN  Sans
+
+# North arrow
+# unrotated
+#\u02191 1 1 LATLON   36.003 -120.35133 0.0   1.0 0.0 0.0   0.0 1.0 1.0   127 127 127   10.0   BOLD  Sans
+#"N" 1 1 LATLON   36.000 -120.35133 0.0   1.0 0.0 0.0   0.0 1.0 1.0   191 191 191   4.0   BOLD+ITALIC  Sans
+# rotated seismicity.init.viewpoint=229,90
+\u21bf 1 1 LATLON   36.09948 -120.52582 0.0   0.6561 0.7547 0.0    -0.7547 0.6561 0.0   191 191 191   18.0   BOLD  Sans
+"N" 1 1 LATLON   36.06796 -120.51605 0.0   0.6561 0.7547 0.0    -0.7547 0.6561 0.0   127 127 127   5.0   BOLD+ITALIC  Sans
+

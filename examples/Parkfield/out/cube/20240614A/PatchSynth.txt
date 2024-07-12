@@ -1,0 +1,6 @@
+	# Source_Patch: strike rake dip length_km width_km lon lat depth_km slip_m
+Source_Patch: 140.0 180.0 89.9  9.0 5.0  -120.43 35.88  27.5 1.0
+Source_Patch: 140.0 180.0 89.9  5.0 5.0  -120.4944 35.9420   27.5 1.0
+# true centroid of fault in stress cube (not needed when Source_FM centered in cube)
+# FaultSlipObject_Geographic_Center: lon lat depth
+FaultSlipObject_Geographic_Center: -120.43 35.88  30.0

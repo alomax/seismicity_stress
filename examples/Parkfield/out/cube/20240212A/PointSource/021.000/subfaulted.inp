@@ -1,0 +1,41 @@
+This is a test file for Coulomb 3.0
+This file is prepared by Python
+#reg1=  0  #reg2=  0   #fixed=  0  sym=  1
+ PR1=       0.250     PR2=       .250    DEPTH=        0.0
+  E1=   0.800000E+06   E2=   0.800000E+06
+XSYM=       .000     YSYM=       .000
+FRIC=       0.400
+S1DR=    19.0001     S1DP=     -0.0001    S1IN=    100.000     S1GD=   .000000
+S3DR=    89.9999     S3DP=      89.999    S3IN=     30.000     S3GD=   .000000
+S2DR=   109.0001     S2DP=     -0.0001    S2IN=      0.000     S2GD=   .000000
+
+  #   X-start    Y-start     X-fin      Y-fin   Kode  rt.lat    reverse   dip angle     top      bot
+xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx
+
+    Grid Parameters
+  1  ----------------------------  Start-x =     -31.47012
+  2  ----------------------------  Start-y =     -33.30000
+  3  --------------------------   Finish-x =      31.47012
+  4  --------------------------   Finish-y =      33.30000
+  5  ------------------------  x-increment =       0.62940
+  6  ------------------------  y-increment =       0.66600
+     Size Parameters
+  1  --------------------------  Plot size =     2.000000
+  2  --------------  Shade/Color increment =     1.000000
+  3  ------  Exaggeration for disp.& dist. =     10000.00
+
+Cross section default
+  1  ----------------------------  Start-x =    -36.00000
+  2  ----------------------------  Start-y =     36.00000
+  3  --------------------------   Finish-x =     38.00000
+  4  --------------------------   Finish-y =    -36.00000
+  5  ------------------  Distant-increment =     1.000000
+  6  ----------------------------  Z-depth =     30.00000
+  7  ------------------------  Z-increment =     1.000000
+     Map infomation
+  1  ---------------------------- min. lon =    -120.8000 
+  2  ---------------------------- max. lon =    -120.1000 
+  3  ---------------------------- zero lon =    -120.4500 
+  4  ---------------------------- min. lat =      35.6000 
+  5  ---------------------------- max. lat =      36.2000 
+  6  ---------------------------- zero lat =      35.9000 

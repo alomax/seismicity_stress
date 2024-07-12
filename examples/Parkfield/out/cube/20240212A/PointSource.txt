@@ -1,0 +1,6 @@
+# Source_FM: strike rake dip lon lat depth_km magnitude
+# IMPORTANT! depth best centered between DEPTH_MIN and DEPTH_MAX, Source_FM centered in cube
+Source_FM: 140.0 180.0 89.9  -120.45 35.9  30.0  6.4
+# true centroid of fault in stress cube (not needed when Source_FM centered in cube)
+# FaultSlipObject_Geographic_Center: lon lat depth
+FaultSlipObject_Geographic_Center: -120.45 35.9  30.0

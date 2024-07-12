@@ -1,0 +1,31 @@
+# theText horizAllign vertAllign LATLON  latRef longRef zRef  xPath yPath zPath  xUp yUp zUp  redCol greenCol blueCol  relSize fontType font
+
+#  events
+#"Mw6.0" 1 1 LATLON   35.81777 -120.36641 -14.0   1.0 -1.0 0.0   0.0 0.0 1.0   191 191 191 1.8   PLAIN  Sans
+
+# polygons
+#"6.4NW" 0 0 LATLON   35.69687 -117.44763 1.5   1.0 -0.25 0.0   0.25 1.0 1.0   0 0 0   1.8   PLAIN  Sans
+
+# Map text
+"Parkfield" 0 0 LATLON   35.899722 -120.432778  1.5   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   1.5   PLAIN  Sans
+##"GH" 1 1 LATLON   35.82994984592424 -120.34945797425958  1.5   0.6428 -0.766 0.0   0.766 0.6428 0.0   191 191 191   1.5   PLAIN  Sans
+##"MM" 1 1 LATLON   35.956329 -120.498489  1.5   0.6428 -0.766 0.0   0.766 0.6428 0.0   191 191 191   1.5   PLAIN  Sans
+"SAFZ" 1 1 LATLON   36.17451 -120.75072  1.5   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   1.8   PLAIN  Sans
+"SAFZ" 1 1 LATLON   35.63214 -120.18699  1.5   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   1.8   PLAIN  Sans
+#"SWFZ" 1 1 LATLON   35.88468 -120.45018  1.5   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   1.5   PLAIN  Sans
+
+# North arrow
+# unrotated
+#\u02191 1 1 LATLON   36.003 -120.35133 0.0   1.0 0.0 0.0   0.0 1.0 0.0   191 191 191   10.0   BOLD  Sans
+#"N" 1 1 LATLON   36.000 -120.35133 0.0   1.0 0.0 0.0   0.0 1.0 0.0   255 255 255   4.0   BOLD+ITALIC  Sans
+# rotated seismicity.init.viewpoint=229,90
+\u02191 1 1 LATLON   35.76566 -120.17631 0.0   0.6561 0.7547 0.0    -0.7547 0.6561 0.0   191 191 191   10.0   BOLD  Serif
+"N" 1 1 LATLON   35.75908 -120.17684 0.0   0.6561 0.7547 0.0    -0.7547 0.6561 0.0   255 255 255   4.0   BOLD+ITALIC  Sans
+
+###"NCSS-DD" 1 1 LATLON   35.71971 -120.47221  -19.0   1.0 0.0 0.0   0.0 1.0 1.0   127 127 255   2.3   PLAIN  Sans
+###"NonLinLoc+SSST+coherence" 1 1 LATLON   35.71971 -120.47221  -19.0   1.0 0.0 0.0   0.0 1.0 1.0   127 127 255   2.3   PLAIN  Sans
+
+
+#"<------------------- 2004 Mw6.0 -|" 2 1 LATLON   35.85967 -120.32330 3.0   1.0 0.0 0.0   0.0 1.0 0.0   255 255 255   1.4   PLAIN  Sans
+# 35.955 -120.4983: McEvilly, T. V., Bakun, W. H., & Casaday, K. B. (1967). The Parkfield, California, earthquakes of 1966. Bulletin of the Seismological Society of America, 57(6), 1221–1244. https://doi.org/10.1785/BSSA0570061221
+#"|- 1966 M5.5 -------------------->" 0 1 LATLON   35.99040 -120.44368 3.0   1.0 0.0 0.0   0.0 1.0 0.0   255 255 255   1.4   PLAIN  Sans

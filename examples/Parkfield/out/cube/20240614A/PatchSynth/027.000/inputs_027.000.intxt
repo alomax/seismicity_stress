@@ -1,0 +1,13 @@
+# General: poissons_ratio friction_coef lon_min lon_max lon_zero lat_min lat_max lat_zero
+General: 0.250 0.400 -120.8 -120.1 -120.45  35.6 36.2 35.9 
+
+# Receiver_Horizontal_Profile: depth_km strike dip rake centerlon centerlat length_km width_km inc_km
+# same fault slip as mainshock
+Receiver_Horizontal_Profile: 27.000  140.0 89.9 180.0  -120.45 35.9  40.0 40.0 0.5
+# PatchSynth
+	# Source_Patch: strike rake dip length_km width_km lon lat depth_km slip_m
+Source_Patch: 140.0 180.0 89.9  9.0 5.0  -120.43 35.88  27.5 1.0
+Source_Patch: 140.0 180.0 89.9  5.0 5.0  -120.4944 35.9420   27.5 1.0
+# true centroid of fault in stress cube (not needed when Source_FM centered in cube)
+# FaultSlipObject_Geographic_Center: lon lat depth
+FaultSlipObject_Geographic_Center: -120.43 35.88  30.0

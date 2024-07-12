@@ -1,0 +1,19 @@
+[io-config]
+exp_name = 027.500
+input_file = /Users/anthony/soft/seismicity_stress/examples/Parkfield/out/cube/20240614A/PatchSynth/027.500/config/inputs_027.500.intxt
+output_dir = /Users/anthony/soft/seismicity_stress/examples/Parkfield/out/cube/20240614A/PatchSynth/027.500
+plot_stress = 1
+plot_grd_disp = 0
+gps_disp_points = 
+aftershocks = 
+strain_file = 
+save_file_type = .png
+
+[compute-config]
+strike_num_receivers = 1
+dip_num_receivers = 1
+mu = 26600000000.0
+lame1 = 34220000000.0
+b = 0.0
+fixed_rake = 
+
