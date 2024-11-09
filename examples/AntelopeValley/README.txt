@@ -6,11 +6,13 @@ export SEIS_STRESS_PYPATH=../../bin
 
 # set out path
 mv out out_ORIG
+#
 ln -s <my_out_path> out
 # or
 mkdir out
 
 # construct point-source deltaCFS cube as stack of elastic_stresses_py Receiver_Horizontal_Profile's
+# NOTE: if you do not have enough memory, use the "# run sequentially" command line and not "# run in parallel"
 run_elastic_stresses_cube.bash
 
 # plot vertical section of cube

@@ -78,11 +78,14 @@ def load_aftershocks_to_cube(aftershocks, aftershock_cube, max_aftershock_count,
                         nz = int((depth - depth_min) / aftershock_cube["z_inc"])
                         if nz >= 0 and nz < numz:
                             # increment cell count if cell count less than max count
-                            if (cube[nx][ny][nz] < max_aftershock_count):
-                                if (cube[nx][ny][nz] < 1):  # no previous aftershock in cell
-                                    cube[nx][ny][nz] = 1
-                                else:
-                                    cube[nx][ny][nz] += 1
+                            if max_aftershock_count > 0:
+                                if (cube[nx][ny][nz] < max_aftershock_count):
+                                    if (cube[nx][ny][nz] < 1):  # no previous aftershock in cell
+                                        cube[nx][ny][nz] = 1
+                                    else:
+                                        cube[nx][ny][nz] += 1
+                            else:
+                                cube[nx][ny][nz] += 1
                             # add aftershock to list of aftershocks in cube
                             aftershocks_in_cube.append([lon, lat, depth])
 
@@ -517,7 +520,8 @@ def mask_cube_center(stress_cube, diam_mask_stress_center, decay_mask_stress_cen
                 if distance < radius_mask_stress_center:
                     mask = 0.0
                 else:
-                    mask = 1.0 - gaussian(distance - radius_mask_stress_center, decay_mask_stress_center)
+                    if decay_mask_stress_center > 1.0e-6:
+                        mask = 1.0 - gaussian(distance - radius_mask_stress_center, decay_mask_stress_center)
                 masked_cube[nx, ny, nz] = value * mask
                 depth_offset += stress_cube["z_inc"]
                 nz += 1
@@ -657,27 +661,27 @@ def read_aftershock_table(infile):
 
 
 def write_output(a_ffault_cube, a_masked_ffault_cube, plot_ffault_norm, a_stress_cube, a_masked_stress_cube,
-                 aftershock_write_rate, out_path_root, no_output_neg, plot_scale):
+                 aftershock_write_rate, out_path_root, no_output_neg, plot_scale, random_seed):
 
     write_gmt_points_cube(a_ffault_cube, out_path_root, "relative_fault_slip",
                           True, plot_ffault_norm, no_output_neg,
-                          plot_scale, False)
+                          plot_scale, False, random_seed)
 
     if a_masked_ffault_cube != None:
         write_gmt_points_cube(a_masked_ffault_cube, out_path_root, "relative_fault_slip_masked",
                               True, plot_ffault_norm,
-                              no_output_neg, plot_scale, False)
+                              no_output_neg, plot_scale, False, random_seed)
 
     write_gmt_points_cube(a_stress_cube, out_path_root, "stress",
-                          False, -1.0, no_output_neg, plot_scale, False)
+                          False, -1.0, no_output_neg, plot_scale, False, random_seed)
     # stress_cube_process = copy.deepcopy(a_stress_cube)
     # stress_cube_process["cube"] = pre_process_stress_cube(stress_cube_process["cube"])
-    # write_gmt_points_cube(stress_cube_process, out_path_root, "stress_processsed", False, -1.0, no_output_neg, plot_scale, False)
+    # write_gmt_points_cube(stress_cube_process, out_path_root, "stress_processsed", False, -1.0, no_output_neg, plot_scale, False, random_seed)
     write_gmt_points_cube(a_masked_stress_cube, out_path_root, "masked_stress",
-                          False, -1.0, no_output_neg, plot_scale, False)
+                          False, -1.0, no_output_neg, plot_scale, False, random_seed)
     # stress_cube_process = copy.deepcopy(a_masked_stress_cube)
     # stress_cube_process["cube"] = pre_process_stress_cube(stress_cube_process["cube"])
-    # write_gmt_points_cube(stress_cube_process, out_path_root, "masked_stress_processsed", False, -1.0, no_output_neg, plot_scale, False)
+    # write_gmt_points_cube(stress_cube_process, out_path_root, "masked_stress_processsed", False, -1.0, no_output_neg, plot_scale, False, random_seed)
 
     write_synthetic_aftershocks(a_masked_stress_cube, aftershock_write_rate, out_path_root, "masked_stress")
 
@@ -731,7 +735,7 @@ def write_synthetic_aftershocks(a_cube, write_rate, out_path_root, cube_name):
 
 
 def write_gmt_points_cube(a_cube, out_path_root, cube_name, output_50percent, value_norm,
-                          no_output_neg, plot_scale, square_amplitudes):
+                          no_output_neg, plot_scale, square_amplitudes, random_seed):
     cube = a_cube["cube"]
 
     print("write_gmt_points_cube: value_norm", value_norm)
@@ -751,7 +755,7 @@ def write_gmt_points_cube(a_cube, out_path_root, cube_name, output_50percent, va
 
     rand_range_xy = a_cube["xy_inc"] / 2.0
     rand_range_z = a_cube["z_inc"] / 2.0
-    random.seed(12345)
+    random.seed(random_seed)
     symbol_scale = 4.0 * min(a_cube["xy_inc"], a_cube["z_inc"])  # size of largest symbol in km
 
     plot_scale_std = plot_scale[0]
@@ -862,14 +866,14 @@ def welcome_and_parse_runstring():
                                      epilog="\U0001f600 \U0001f600 \U0001f600 ");
     parser.add_argument("--config", type=str, required=True,
                         help="name of a config.txt file used for a Receiver_Horizontal_Profile. Required.")
-    parser.add_argument("--out_path", type=str, default="None",
+    parser.add_argument("--out_path", type=str, default=None,
                         help="Path for output. Default is path to config.txt file specified in --config.")
     parser.add_argument("--aftershocks", type=str, required=True,
                         help="file with aftershock hypocenters in simple format: date lon lat depth mag. Required.")
     parser.add_argument("--stress_measure", type=str, default="coulomb",
                         help="Stress measure to use to construct point source kernel: coulomb shear normal.")
     parser.add_argument("--max_aftershock_count", type=int, default=1,
-                        help="Maximum count of afteshocks in single cube cell.")
+                        help="Maximum count of afteshocks in single cube cell. < 0 for no maximum.")
     parser.add_argument('--no_mask_to_aftershocks', action='store_true', default=False,
                         help='Do not mask finite-faulting map to hull of aftershocks.')
     parser.add_argument('--no_mask_depth_aftershocks', action='store_true', default=False,
@@ -894,6 +898,8 @@ def welcome_and_parse_runstring():
                         help='Write pickled aftershock cube to output.')
     parser.add_argument("--aftershock_write_rate", type=float, default=0.01,
                         help="0.0-1.0 rate for output of synthetic aftershocks distributed following Coulomb stress cube.")
+    parser.add_argument("--random_seed", type=int, default=12345,
+                        help="Random seed for generating samples of cube values for plot output.")
 
     args = parser.parse_args()
 
@@ -1084,7 +1090,7 @@ if __name__ == "__main__":  # CONFIGURE, INPUT, COMPUTE, OUTPUT
     #aftershock_write_rate = len(aftershocks) / ((np.sum(masked_stress_cube_pos) / np.amax(masked_stress_cube_pos)))
     # print("DEBUG: aftershock_write_rate, len(aftershocks), np.sum(masked_stress_cube_pos), np.amax(masked_stress_cube_pos)", aftershock_write_rate, len(aftershocks), np.sum(masked_stress_cube_pos), np.amax(masked_stress_cube_pos))
     write_output(ffault_cube, masked_ffault_cube, args.plot_ffault_norm, stress_cube, masked_stress_cube,
-                 aftershock_write_rate, out_path_root, args.no_output_neg, args.plot_scale)
+                 aftershock_write_rate, out_path_root, args.no_output_neg, args.plot_scale, args.random_seed)
     if args.save_cubes:
         write_cubes_output(ffault_cube, "ffault_cube", out_path_root)
         write_cubes_output(masked_ffault_cube, "masked_ffault_cube", out_path_root)
